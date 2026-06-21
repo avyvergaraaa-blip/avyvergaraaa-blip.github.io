@@ -346,11 +346,11 @@ h1, h2, h3, h4 {
 /* ============ TOOLS ============ */
 .tools { padding: 5rem 1.5rem; max-width: var(--max-width); margin: 0 auto; }
 .tools-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem 2.5rem;
 }
-.tool-group { flex: 1 1 calc(33.333% - 1.7rem); min-width: 220px; }
+.tool-group { min-width: 0; }
 .tool-group h4 {
   font-size: 1rem;
   color: var(--terracotta);
@@ -464,13 +464,13 @@ h1, h2, h3, h4 {
   .about-photo-img { width: 180px; }
   .service-card { flex: 1 1 calc(50% - 0.7rem); }
   .proof-item { flex: 1 1 calc(50% - 0.65rem); }
-  .tool-group { flex: 1 1 calc(50% - 1.25rem); }
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 560px) {
   .service-card { flex: 1 1 100%; }
   .proof-item { flex: 1 1 100%; }
-  .tool-group { flex: 1 1 100%; }
+  .tools-grid { grid-template-columns: 1fr; }
   .quote-card { flex: 1 1 100%; }
   .hero-actions { flex-direction: column; align-items: stretch; }
 }
